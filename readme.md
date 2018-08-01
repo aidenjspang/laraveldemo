@@ -1,17 +1,16 @@
-## Laravel 5.3 Manage Limo Booking
-   
-<br><a href="http://www.jctest.com.au/laraveldemo">Demo Link</a> 
-User: email = user@aa.com, password: user
-Manager: email = manager@aa.com, password: manager
+## JCL Booking System (Laravel 5.3)
+<br><a href="http://www.jctest.com.au/laraveldemo">Demo Link</a> <br>
+User - ID: user@aa.com, password: jcluser*!<br>
+Manager - ID: manager@aa.com, password: jclmanager!<br>
 
-## Functions
-- Authentication: registration, login, logout, password reset, mail confirmation
-- Users roles : manager(all access), user(view list, create new booking)
-- CRUD with database: input validation(UI, server)
-- View bookings: pagination, eager loading, sort and find by keywords
-- Comments: add coomment by user, EventListener
-- Send email: email to notify supplier, Amazon SES, logging, EventListener
-
+## Business Function
+- Authentication: user register, login, logout, password reset, mail confirmation
+- Users roles : different permission according to the account level. manager(all access), user(view list, create new booking)
+- Create new booking: input validation(UI, server)
+- View booking: pagination, eager loading, sort and find by keywords
+- Assign supplier. Input price & cost
+- Comments: coomment management by Laravel EventListener
+- Send email: email to the supplier by Amazon SES and EventListener
 
 ## Include
 - <a href="http://getbootstrap.com/">Bootstrap</a> for CSS and jQuery plugins
@@ -23,3 +22,4 @@ Manager: email = manager@aa.com, password: manager
 ## Packages included
 - <a href="https://github.com/laracasts/flash">laracasts/flash</a> for flash messages
 - <a href="https://github.com/barryvdh/laravel-debugbar">barryvdh/laravel-debugbar</a> for code debugging
+
