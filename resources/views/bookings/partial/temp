@@ -1,0 +1,36 @@
+
+@section('script')
+<script type="text/javascript">
+    $("tr").each(function(){
+        var col_val = $(this).find("td:eq(1)").text().trim();
+        var supplier_id = $(this).find("td:eq(12)").text().trim();
+
+        console.log(supplier_id);
+
+        if (col_val == "Cancelled"){
+            $(this).addClass('red');  //the selected class colors the row green//
+        } else {
+        }
+
+        if (supplier_id == 1){
+            $(this).addClass('green');  //the selected class colors the row green//
+        } else {
+        }
+    });
+</script>
+@stop
+
+
+
+<th class="text-center"></th>
+
+<td class="text-center" style="width:50px;">
+    <a href="{{ route('bookings.show', $booking->id) }}">
+        <img src="{{ URL::asset('images/search-icon.png') }}" style="width: 25px;">
+    </a>
+    <!--
+    <a href="{{ route('bookings.show', $booking->id) }}">
+        View
+    </a>
+    -->
+</td>

@@ -1,0 +1,139 @@
+
+Git 원격주소지가 변경되어 Git 이전하기
+https://blog.naver.com/lys1900/221086518682
+
+
+1.
+git remote remove origin
+git remote add origin https://github.com/aidenjspang/laraveldemo.git
+git push -u origin --all
+git push -u origin --tags
+
+2.
+git init
+git add *
+git commit -m "3rd_edit"
+git push origin master
+
+
+
+3. Steps to clear out the history of a git/github repository
+https://gist.github.com/stephenhardy/5470814
+-- Remove the history from
+rm -rf .git
+
+#remove git stage area
+git reset
+
+-- recreate the repos from the current content only
+git init
+
+git reset --mixed master
+git add .
+git commit -m "This is a new commit for laraveldemo"
+git remote add origin https://github.com/aidenjspang/laraveldemo.git
+git push origin master
+
+
+
+Removing files from a repository's history
+https://help.github.com/articles/removing-files-from-a-repository-s-history/
+
+# Should I add Laravel vendor directory to .gitignore or not?
+https://stackoverflow.com/questions/39192071/should-i-add-laravel-vendor-directory-to-gitignore-or-not?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+
+#find php.ini
+sudo find / -name php.ini
+sudo service php7.0-fpm restart
+
+
+
+
+4. Laravel Demo Site Built
+sudo mkdir -p /var/www/laraveldemo
+sudo chown -R www-data:www-data /var/www/laraveldemo
+sudo chmod -R 777 /var/www/laraveldemo
+sudo ln -s /var/www/laraveldemo/public /var/www/jctest.com.au/public_html/laraveldemo
+
+git init
+git clone https://github.com/aidenjspang/laraveldemo.git
+
+Node & NPM 설치
+https://zetawiki.com/wiki/%EC%9A%B0%EB%B6%84%ED%88%AC_node.js_%EC%84%A4%EC%B9%98
+
+sudo apt-get install npm
+
+sudo npm install -g gulp
+gulp --version
+
+sudo npm install -g bower
+bower --version
+
+npm install
+
+gulp
+
+sudo rm /var/www/laraveldemo/public/css/*
+sudo rm /var/www/laraveldemo/public/js/*
+sudo rm /var/www/laraveldemo/public/build/css/*
+sudo rm /var/www/laraveldemo/public/build/js/*
+
+touch bower.json && echo '{"name":"ㅣlaraveldemo"}' > bower.json
+
+#composer install
+curl -sS https://getcomposer.org/installer | php
+composer global require "laravel/installer=~1.1"
+
+#composer update
+composer update
+
+# Upgrade to PHP 7 on Ubuntu 14.04
+https://www.digitalocean.com/community/tutorials/how-to-upgrade-to-php-7-on-ubuntu-14-04
+
+#unzip
+sudo apt-get install unzip
+
+# Laravel Key Generate
+php artisan key:generate
+
+#Refresh Laravel
+php artisan view:clear
+php artisan config:clear
+php artisan cache:clear
+php artisan route:clear
+
+
+
+## Github Knowledge
+1. Pull Request
+   https://blog.naver.com/chyun412/220907591528
+
+
+2. delete a Git branch both locally and remotely?
+   https://stackoverflow.com/questions/2003505/how-do-i-delete-a-git-branch-both-locally-and-remotely/2003515#2003515
+
+
+
+## Sample
+1. 1st Commit
+git reset
+git init
+git add .
+git commit -m "1st commit"
+git remote add origin https://github.com/aidenjspang/laraveldemo.git
+git push -u origin master
+
+2. Update
+git add .  (삭제된 폴더 반영을 위해서는 git add --all)
+git commit -m "2nd commit"
+git push -u origin master
+
+
+3. Git repository 의 History를 Delete 하려면
+rm -rf .git
+git init
+git remote add origin https://github.com/aidenjspang/laraveldemo.git
+git add .
+git commit -m "1st commit"
+git push -f origin master
+

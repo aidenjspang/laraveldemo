@@ -1,0 +1,11 @@
+{
+  "name": "bms",
+  "devDependencies": {
+    "select2": "^4.0.5",
+    "bootstrap-sass": "^3.3.7",
+    "font-awesome": "^5.0.13"
+  },
+  "dependencies": {
+    "eonasdan-bootstrap-datetimepicker": "^4.17.47"
+  }
+}

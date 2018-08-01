@@ -1,0 +1,211 @@
+DB::insert('INSERT INTO posts(title, body) VALUES(?, ?)', ['Hello DB', 'Greeting from tinker']);
+$posts = DB::select('select * from posts');
+
+sudo mkdir -p /var/www/lara
+
+
+sudo chown -R www-data:www-data /var/www/lara
+sudo chmod -R 777 /var/www/lara
+
+composer create-project laravel/laravel /var/www/lara "5.3.*"
+
+sudo vi /var/www/lara/public/index.html
+
+<html>
+    <head>
+        <title>Welcome to lara5</title>
+    </head>
+    <body>
+        <h1>lara5</h1>
+    </body>
+</html>
+
+sudo ln -s /var/www/lara/public /var/www/dev/public_html/lara
+
+sudo ln -s /etc/nginx/sites-available/dev.jcreal.com.au /etc/nginx/sites-enabled/
+
+php artisan tinker
+
+DB::table('articles')->select('id')->where('id', 1)->get();
+
+
+
+php artisan view:clear
+php artisan config:clear
+php artisan cache:clear
+php artisan route:clear
+
+@foreach($allStatus as $status)
+    {{ $booking->status_code == $status->status_code ?  $status->status_name : '' }}
+@endforeach
+
+composer dump-autoload
+            <a class="navbar-brand" href="{{ auth()->check() ? route('home') : route('root') }}">
+                {{ config('app.name', 'Laravel') }}
+            </a>
+
+php artisan make:auth
+php artisan event:generate
+php artisan migrate
+
+mysql -u jcapdbuser -p
+
+App\User::find(2)->articles()->create([
+ 'title' => 'aiden article',
+ 'content' => 'aiden content',
+]);
+
+ resources/assets/js/main.js
+
+npm install laravel-elixir-vue --save-dev
+
+sudo rm /var/www/lara/public/css/*
+sudo rm /var/www/lara/public/js/*
+sudo rm /var/www/lara/public/build/css/*
+sudo rm /var/www/lara/public/build/js/*
+
+node_modules/jquery-tabby/jquery.textarea.js
+
+<?php
+
+namespace App;
+
+use Illuminate\Support\Facades\File;
+
+class Document
+{
+    private $directory = 'docs';
+
+    public function get($file = null)
+    {
+        $file = is_null($file) ? 'index.md' : $file;
+        if (! File::exists($this->getPath($file))) {
+            abort(404, 'File not exist');
+        }
+
+        return File::get($this->getPath($file));
+    }
+
+    private function getPath($file)
+    {
+        return base_path($this->directory . DIRECTORY_SEPARATOR . $file);
+    }
+}
+
+
+$ touch bower.json && echo '{"name":"lara"}' > bower.json
+$ touch .bowerrc && echo '{"directory":"resources/assets/vendor","analytics":false}' > .bowerrc
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+sudo rm /var/www/lara/public/build/css/*
+sudo rm /var/www/lara/public/build/js/*
+
+
+The error message said everything.
+vue-template-compiler and vue version should match.
+
+You can install them like this -
+
+npm install vue-template-compiler@latest vue@latest
+
+This way laravel mix will use your installed versions.
+
+
+------------------------ Create Controller --------------------------
+php artisan make:controller CommentsController
+php artisan make:controller BookingsController
+php artisan make:controller SupplierController
+php artisan make:controller BookingsEmailController
+
+
+
+------------------------ Migration --------------------------
+sudo chown -R www-data:www-data /var/www/lara
+sudo chmod -R 777 /var/www/lara
+
+php artisan make:migration create_posts_table
+php artisan migrate
+php artisan migrate:rollback
+
+php artisan make:migration TIMESTAMP_add_confirm_code_column_on_users_table
+php artisan make:migration create_comments_table
+php artisan make:migration create_votes_table
+
+* 삭제시 아래 루트에서 파일 업데이트 필요
+ubuntu@ip-172-31-33-202:/var/www/lara/vendor/composer$ vi autoload_static*
+ubuntu@ip-172-31-33-202:/var/www/lara/vendor/composer$
+
+
+
+------------------------ Edit Route(resources) --------------------------
+Route::resource('bookings', 'BookingsController');
+
+
+------------------------ Create Model --------------------------
+php artisan make:model Attachment
+php artisan make:model Comment
+php artisan make:model Vote
+php artisan make:model Booking
+php artisan make:model Status
+php artisan make:model City
+php artisan make:model Pickup
+php artisan make:model Vehicle
+php artisan make:model Supplier
+
+
+
+
+------------------------ Event Handling ----------------------
+php artisan make:event UserCreated
+php artisan make:event BookingsEvent
+
+
+------------------------ Form Request ----------------------
+php artisan make:request CommentsRequest
+php artisan make:request BookingRequest
+php artisan make:request SupplierRequest
+
+
+------------------------ Form Request ----------------------
+php artisan make:listener BookingEventListener --event=BookingsEvent
+
+
+
+------------------------ Cache Clear ----------------------
+sudo rm -rf /var/www/lara/storage/framework/cache
+
+
+------------------------- Old Code -------------------
+        \Mail::send('emails.auth.confirm', compact('user'), function ($message) use ($user) {
+           $message->to($user->email);
+           $message->subject(
+               sprintf('[%s] Confirm your signing up.', config('app.name'))
+           );
+        });
+
+--------------------------
+https://stackoverflow.com/questions/11100911/cant-drop-table-a-foreign-key-constraint-fails
+SET FOREIGN_KEY_CHECKS=0; DROP TABLE bericht; SET FOREIGN_KEY_CHECKS=1;
+
+SET FOREIGN_KEY_CHECKS =0;# MySQL returned an empty result set (i.e. zero rows).
+DROP TABLE articles;# MySQL returned an empty result set (i.e. zero rows).
+SET FOREIGN_KEY_CHECKS =1;# MySQL returned an empty result set (i.e. zero rows).
+
+
+---------------- select box
+@foreach($allCity as $city)
+    <option value="{{ $city->city_code }}"
+        @if ($city->city_code == old('city', $booking->city))
+            selected="selected"
+        @endif
+    >{{ $city->city_name }}</option>
+@endforeach
+
+| DELETE    | attachments/{attachment}     | attachments.destroy     | App\Http\Controllers\AttachmentsController@destroy            | web
+| DELETE    | articles/{article}           | articles.destroy        | App\Http\Controllers\ArticlesController@destroy               | web
+| DELETE    | bookings/{booking}           | bookings.destroy        | App\Http\Controllers\BookingsController@destroy               | web
