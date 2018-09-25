@@ -11,7 +11,7 @@ Manager - ID: manager@aa.com, password: jclmanager!<br>
 - Assign supplier. Input price & cost
 - Comments: coomment management by Laravel EventListener
 - Send email: email to the supplier by Amazon SES and EventListener
-- Data esport by Excel format
+- Data export by Excel format
 
 ## Include
 - <a href="https://laravel-excel.maatwebsite.nl/3.0/getting-started/">Laravel Excel</a> for exporting data
