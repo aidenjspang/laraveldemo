@@ -2,6 +2,7 @@
 <br><a href="http://www.jctest.com.au/laraveldemo">Demo Link</a> <br>
 User - ID: user@aa.com, password: jcluser*!<br>
 Manager - ID: manager@aa.com, password: jclmanager!<br>
+Customer names of demo system are dummy.
 
 ## Business Function
 - Authentication: user register, login, logout, password reset, mail confirmation
